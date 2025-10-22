@@ -13,6 +13,7 @@ function addComment() {
     }
     
     emit('add-todo', {
+        id: Date.now(),
         name: name.value,
         message: message.value
     });

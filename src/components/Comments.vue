@@ -33,7 +33,9 @@ watch(comments, (val) => {
         <hr />
         <FormTodo @add-todo="addComment"></FormTodo>
         <div class="list-group">
-            <div class="list-group-item" v-for="(comment, index) in allComments">
+            <br>
+            <p v-if="comments.length <= 0">Sem comentários...</p>
+            <div class="list-group-item" v-for="(comment, index) in allComments" :key="comment.id">
                 <span class="comment_author">Autor: <strong>{{ comment.name }}</strong></span>
                 <p>{{ comment.message }}</p>
                 <div>
